@@ -1,6 +1,8 @@
 /**
  * Criar uma função responsável por mostrar o alerta na tela
  */
+let contador = 0
+
 function mostrarAlerta() {
   /**
    * o objeto document é um objeto que faz uma representação 
@@ -21,6 +23,8 @@ function mostrarAlerta() {
    * dentro de um elemento HTML
    */
   const divAlerta = document.getElementById('alerta')
+  const paragrafoAlerta = document.getElementById('alerta-conteudo')
+  paragrafoAlerta.innerText = `Você já clicou ${++contador} vezes no botão!`
   divAlerta.classList.add('mostrar')
 }
 
@@ -29,8 +33,8 @@ function fecharAlerta() {
    * classList.remove() remove uma classe dinamicamente de dentro
    * de um elemento HTML
    */
-   const divAlerta = document.getElementById('alerta')
-   divAlerta.classList.add('mostrar')
+  const divAlerta = document.getElementById('alerta')
+  divAlerta.classList.remove('mostrar')
 }
 
 const btnMostrar = document.getElementById('mostrar')
